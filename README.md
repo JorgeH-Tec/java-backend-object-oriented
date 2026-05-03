@@ -1,39 +1,44 @@
-# Java Backend: Object Oriented (OOP) 🚀
+# Java Backend: OOP Evolution Journey 🚀
 
-> **Status:** 🏗️ Em desenvolvimento (Fase de Planejamento e Arquitetura)
+> **Status:** 🏗️ Em desenvolvimento (Evolução Contínua)
 
-Este repositório representa o segundo grande marco na minha jornada Backend. Após consolidar os fundamentos da lógica procedural, o foco aqui é dominar a **Orientação a Objetos (POO)** para criar sistemas mais robustos, modulares e de fácil manutenção.
+Este repositório documenta minha progressão técnica na **Orientação a Objetos (POO)**. O objetivo é transformar conceitos teóricos em sistemas funcionais, modulares e resilientes, preparando a base para projetos futuros em **Spring Boot**.
 
----
-
-## 📍 O Desafio Atual
-Refatorar o **Analisador de Desempenho Escolar**, migrando de uma estrutura baseada em métodos estáticos e arrays soltos para um modelo de classes que representam entidades do mundo real.
-
-### 🎯 Objetivos Técnicos:
-- **Encapsulamento:** Proteção de dados através de modificadores de acesso (`private`).
-- **Abstração:** Modelagem da classe `Turma` com atributos e comportamentos próprios.
-- **Construtores:** Garantir a integridade do objeto no momento da criação.
-- **Getters & Setters:** Controle de leitura e escrita de informações.
+Todo o desenvolvimento é realizado em ambiente **Linux (Fedora)**, utilizando **Maven** para gestão de dependências.
 
 ---
 
-## 📂 Estrutura de Pastas (Planejada)
+## 📅 Linha do Tempo de Projetos
+
+### 1. Ultra Combat Simulator (Agregação & Encapsulamento) 🥊
+O primeiro marco foca no relacionamento entre classes (Agregação) e na proteção do estado dos objetos.
+
+- **Conceitos Aplicados:**
+    - **Encapsulamento Total:** Atributos e setters privados para garantir a consistência dos dados.
+    - **Cláusulas de Guarda (Guard Clauses):** Validação antecipada com `throw new IllegalArgumentException`.
+    - **Tratamento de Exceções:** Uso de blocos `try-catch` no `main` para resiliência do sistema.
+    - **Lógica Aleatória:** Implementação de `java.util.Random` como atributo `final` para eficiência.
+    - **Switch Expressions:** Sintaxe moderna de flecha (`->`) para controle de fluxo.
+
+---
+
+## 📂 Estrutura do Repositório
 ```bash
-├── .gitignore                       # Filtro de arquivos binários e IDE
-└── README.md                        # Documentação técnica
+├── .gitignore                      # Filtro de arquivos binários e configurações de IDE (.iml)
+├── README.md                       # Documentação da jornada técnica
+└── java-poo-relationships-and-association/
+    └── src/ # Projeto 1: Simulador de Combate
+        ├── Lutador.java
+        ├── Luta.java
+        └── CombatEvent.java
 ```
 
 ---
 
-## 🔜 Próximos Passos
-1. Setup inicial do repositório.
-2. Criação da classe `Turma` com lógica de encapsulamento.
-3. Implementação de métodos de cálculo de média e extremos como comportamentos do objeto.
-4. Integração com a interface de usuário via Console.
+## 🔜 Próximo Milestone: Herança (Inheritance)
+O próximo desafio será aplicar o conceito de **Herança** e **Polimorfismo**. A ideia é criar especializações de classes, reduzindo a duplicação de código e permitindo comportamentos mais complexos.
 
----
-
-**[🔗 Repositório Anterior: Java Backend Foundations](https://github.com/JorgeH-Tec/java-backend-foundations)**
+**[🔗 Repositório Anterior: java-backend-foundations](https://github.com/JorgeH-Tec/java-backend-foundations)**
 
 ---
 
