@@ -1,10 +1,11 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-.kotlin
-*.iml
+### Essentials ###
+*.class
+bin/
+target/
 .idea/
+.vscode/
+.settings/
+*.iml
 
 ### Eclipse ###
 .apt_generated
@@ -14,7 +15,6 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
@@ -24,9 +24,6 @@ bin/
 /dist/
 /nbdist/
 /.nb-gradle/
-
-### VS Code ###
-.vscode/
 
 ### Mac OS ###
 .DS_Store
