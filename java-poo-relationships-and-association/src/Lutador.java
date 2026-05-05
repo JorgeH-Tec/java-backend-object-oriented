@@ -9,6 +9,18 @@ public class Lutador {
     private int derrotas;
     private int empates;
 
+    // Constructor
+    public Lutador(String nome, String nacionalidade, int idade, double altura, double peso, int vitorias, int derrotas, int empates) {
+        this.nome = nome;
+        this.nacionalidade = nacionalidade;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+        this.vitorias = vitorias;
+        this.derrotas = derrotas;
+        this.empates = empates;
+    }
+
     // Public Methods
     public void apresentar() {
         System.out.println("---------- APRESENTAÇÂO ----------");
@@ -44,18 +56,7 @@ public class Lutador {
         setEmpates(getEmpates() + 1);
     }
 
-    // Special Methods
-    public Lutador(String nome, String nacionalidade, int idade, double altura, double peso, int vitorias, int derrotas, int empates) {
-        this.nome = nome;
-        this.nacionalidade = nacionalidade;
-        this.idade = idade;
-        this.altura = altura;
-        this.peso = peso;
-        this.vitorias = vitorias;
-        this.derrotas = derrotas;
-        this.empates = empates;
-    }
-
+    // Getters and Setters
     public String getNome() {
         return this.nome;
     }

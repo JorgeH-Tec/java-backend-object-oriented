@@ -9,11 +9,12 @@ public class Luta {
     private boolean aprovada;
     private final Random gerador = new Random();
 
-    // Public Methods
+    // Constructor
     public Luta() {
         this.aprovada = false;
     }
 
+    // Public Methods
     public void marcarLuta(Lutador desafiado, Lutador desafiante) {
         if (Objects.equals(desafiado.getNome(), desafiante.getNome())) {
             throw new IllegalArgumentException("Um Lutador não pode lutar contra ele mesmo!");
@@ -58,7 +59,7 @@ public class Luta {
         }
     }
 
-    // Special Methods
+    // Setters and Getters
     public Lutador getDesafiado() {
         return desafiado;
     }
