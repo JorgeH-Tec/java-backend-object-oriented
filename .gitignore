@@ -6,6 +6,7 @@ target/
 .vscode/
 .settings/
 *.iml
+out/
 
 ### Eclipse ###
 .apt_generated
