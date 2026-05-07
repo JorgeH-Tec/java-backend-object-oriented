@@ -1,15 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Simulation {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Person[] p = new Person[2];
+        Book[] l = new Book[3];
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        try {
+            p[0] = new Person("Maria", 20, "F");
+            p[1] = new Person("Jorge", 18, "M");
+
+            l[0] = new Book("Java para Iniciantes", "Guanabara", 300, p[0]);
+            l[1] = new Book("JAVA POO", "Guanabara", 500, p[1]);
+            l[2] = new Book("Java Avançado", "Guanabara", 800, p[1]);
+
+            l[0].abrir();
+            l[0].folhear(147);
+            l[0].avancarPag();
+            l[0].detalhes();
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
