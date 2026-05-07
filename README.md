@@ -28,8 +28,8 @@ O primeiro marco foca no relacionamento entre classes (Agregação) e na proteç
 ├── README.md                       # Documentação da jornada técnica
 └── java-poo-relationships-and-association/
     └── src/ # Projeto 1: Simulador de Combate
-        ├── Lutador.java
-        ├── Luta.java
+        ├── Fighter.java
+        ├── Fight.java
         └── CombatEvent.java
 ```
 

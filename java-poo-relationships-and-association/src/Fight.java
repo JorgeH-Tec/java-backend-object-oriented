@@ -1,21 +1,21 @@
 import java.util.Objects;
 import java.util.Random;
 
-public class Luta {
+public class Fight {
     // Attributes
-    private Lutador desafiado; // tipo abstrato de dado, o tipo é uma instacia/agregação da Classe Lutador
-    private Lutador desafiante;
+    private Fighter desafiado; // tipo abstrato de dado, o tipo é uma instacia/agregação da Classe Lutador
+    private Fighter desafiante;
     private int rounds;
     private boolean aprovada;
     private final Random gerador = new Random();
 
     // Constructor
-    public Luta() {
+    public Fight() {
         this.aprovada = false;
     }
 
     // Public Methods
-    public void marcarLuta(Lutador desafiado, Lutador desafiante) {
+    public void marcarLuta(Fighter desafiado, Fighter desafiante) {
         if (Objects.equals(desafiado.getNome(), desafiante.getNome())) {
             throw new IllegalArgumentException("Um Lutador não pode lutar contra ele mesmo!");
         }
@@ -60,19 +60,19 @@ public class Luta {
     }
 
     // Setters and Getters
-    public Lutador getDesafiado() {
+    public Fighter getDesafiado() {
         return desafiado;
     }
 
-    private void setDesafiado(Lutador desafiado) {
+    private void setDesafiado(Fighter desafiado) {
         this.desafiado = desafiado;
     }
 
-    public Lutador getDesafiante() {
+    public Fighter getDesafiante() {
         return desafiante;
     }
 
-    private void setDesafiante(Lutador desafiante) {
+    private void setDesafiante(Fighter desafiante) {
         this.desafiante = desafiante;
     }
 

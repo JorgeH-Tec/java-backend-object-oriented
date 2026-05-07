@@ -1,4 +1,4 @@
-public class Lutador {
+public class Fighter {
     // Attributes
     private String nome;
     private String nacionalidade;
@@ -10,7 +10,7 @@ public class Lutador {
     private int empates;
 
     // Constructor
-    public Lutador(String nome, String nacionalidade, int idade, double altura, double peso, int vitorias, int derrotas, int empates) {
+    public Fighter(String nome, String nacionalidade, int idade, double altura, double peso, int vitorias, int derrotas, int empates) {
         this.nome = nome;
         this.nacionalidade = nacionalidade;
         this.idade = idade;
