@@ -12,14 +12,32 @@ Todo o desenvolvimento é realizado em ambiente **Linux (Fedora)**, utilizando *
 
 ### 1. Ultra Combat Simulator (Agregação & Encapsulamento) 🥊
 O primeiro marco foca no relacionamento entre classes (Agregação) e na proteção do estado dos objetos.
+Entendido. Foco total em objetividade e clareza técnica:
 
 - **Conceitos Aplicados:**
-    - **Encapsulamento Total:** Atributos e setters privados para garantir a consistência dos dados.
-    - **Cláusulas de Guarda (Guard Clauses):** Validação antecipada com `throw new IllegalArgumentException`.
-    - **Tratamento de Exceções:** Uso de blocos `try-catch` no `main` para resiliência do sistema.
-    - **Lógica Aleatória:** Implementação de `java.util.Random` como atributo `final` para eficiência.
-    - **Switch Expressions:** Sintaxe moderna de flecha (`->`) para controle de fluxo.
+    - **Encapsulamento:** Atributos privados para garantir a integridade dos dados.
+    - **Guard Clauses:** Validação precoce via `IllegalArgumentException`.
+    - **Exceções:** Uso de `try-catch` para maior resiliência do sistema.
+    - **Random:** Atributo `final` para otimização de recursos.
+    - **Switch Expressions:** Sintaxe moderna (`->`) para controle de fluxo.
 
+
+
+### 2. Book Management System (Interfaces & Agregação) 📚
+
+Neste projeto, introduzo **Contratos (Interfaces)** para padronizar comportamentos entre objetos distintos.
+
+  - **Conceitos Aplicados:**
+      - **Interfaces:** Contrato `Publication` com métodos obrigatórios (`open`, `browse`, etc).
+      - **Implementação:** Classe `Book` regida por contrato formal de comportamento.
+      - **Agregação:** Associação funcional entre as classes `Person` e `Book`.
+      - **Lógica de Estado:** Regras de negócio baseadas no status interno do objeto.
+
+
+
+---
+
+Você pretende aplicar esse mesmo estilo de escrita técnica e direta nas futuras seções de **Herança** e **Polimorfismo**?
 ---
 
 ## 📂 Estrutura do Repositório
@@ -28,9 +46,15 @@ O primeiro marco foca no relacionamento entre classes (Agregação) e na proteç
 ├── README.md                       # Documentação da jornada técnica
 └── java-poo-relationships-and-association/
     └── src/ # Projeto 1: Simulador de Combate
+        ├── CombatEvent.java (main)
         ├── Fighter.java
-        ├── Fight.java
-        └── CombatEvent.java
+        └── Fight.java
+└── java-poo-interface-and-aggregation/
+    └── src/ # Projeto 2: Simulador de posse de livros
+        ├── Simulation.java (main)
+        ├── Book.java
+        ├── Person.java
+        └── Publication.java
 ```
 
 ---
