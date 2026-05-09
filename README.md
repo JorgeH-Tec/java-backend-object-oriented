@@ -10,7 +10,7 @@ Todo o desenvolvimento é realizado em ambiente **Linux (Fedora)**, utilizando *
 
 ## 📅 Linha do Tempo de Projetos
 
-### 1. Ultra Combat Simulator (Agregação & Encapsulamento) 🥊
+### 1. Combat System Simulator (Agregação & Encapsulamento) 🥊
 O primeiro marco foca no relacionamento entre classes (Agregação) e na proteção do estado dos objetos.
 Entendido. Foco total em objetividade e clareza técnica:
 
@@ -44,17 +44,13 @@ Você pretende aplicar esse mesmo estilo de escrita técnica e direta nas futura
 ```bash
 ├── .gitignore                      # Filtro de arquivos binários e configurações de IDE (.iml)
 ├── README.md                       # Documentação da jornada técnica
-└── java-poo-relationships-and-association/
-    └── src/ # Projeto 1: Simulador de Combate
-        ├── CombatEvent.java (main)
-        ├── Fighter.java
-        └── Fight.java
-└── java-poo-interface-and-aggregation/
-    └── src/ # Projeto 2: Simulador de posse de livros
-        ├── Simulation.java (main)
-        ├── Book.java
-        ├── Person.java
-        └── Publication.java
+└── 01-Encapsulamento/
+    └── java-poo-relationships-and-association/
+        └── src/ # Projeto 1: Agregação & Encapsulamento
+            └── ...
+    └── java-poo-interface-and-aggregation/
+        └── src/ # Projeto 2: Interface & Agregações
+            └── ...
 ```
 
 ---
