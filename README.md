@@ -37,20 +37,18 @@ Neste projeto, introduzo **Contratos (Interfaces)** para padronizar comportament
 
 ---
 
-Você pretende aplicar esse mesmo estilo de escrita técnica e direta nas futuras seções de **Herança** e **Polimorfismo**?
----
-
 ## 📂 Estrutura do Repositório
 ```bash
 ├── .gitignore                      # Filtro de arquivos binários e configurações de IDE (.iml)
 ├── README.md                       # Documentação da jornada técnica
 └── 01-Encapsulamento/
-    └── java-poo-relationships-and-association/
-        └── src/ # Projeto 1: Agregação & Encapsulamento
-            └── ...
-    └── java-poo-interface-and-aggregation/
-        └── src/ # Projeto 2: Interface & Agregações
-            └── ...
+    └── java-poo-relationships-and-association/src/ # Projeto 1: Encapsulamento & Agrecações
+        └── ...
+    └── java-poo-interface-and-aggregation/src/ # Projeto 2: Agregações & Interface
+        └── ...
+└── 02-Heranca/
+    └── java-poo-inheritance-and-encapsulament/src/ # Projeto 3: Herança & Encapsulamento
+        └── ...
 ```
 
 ---
