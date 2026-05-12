@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public abstract class Asset {
+public abstract class Asset implements Reportable {
     // Attributes
     private String nome;
     private BigDecimal valorInicial;
@@ -14,8 +14,9 @@ public abstract class Asset {
     // Public Methods
     public abstract BigDecimal calcularValorAtual();
 
+    @Override
     public final void exibirRelatorio() {
-        System.out.println(calcularValorAtual());
+        System.out.println("Ativo: " + getNome() + "\n Valor Atual: " + calcularValorAtual());
     }
 
     // Intern Methods
