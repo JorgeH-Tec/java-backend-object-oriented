@@ -1,3 +1,3 @@
 public interface Reportable {
-    public abstract void exibirRelatorio();
+    public abstract void showReport();
 }

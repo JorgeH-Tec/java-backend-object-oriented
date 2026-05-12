@@ -3,12 +3,12 @@ import java.util.List;
 
 public class Investor {
     // Attributes
-    private String nome;
+    private String name;
     private final List<Asset> portfolio = new ArrayList<>();
 
     // Constructor
-    public Investor(String nome) {
-        setNome(nome);
+    public Investor(String name) {
+        setName(name);
     }
 
     // public Methods
@@ -18,20 +18,20 @@ public class Investor {
 
     public void showGeneralReport() {
         for (Asset asset : portfolio) {
-            asset.exibirRelatorio();
+            asset.showReport();
         }
     }
 
     // Getters and Setters
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        if (nome == null || nome.isBlank()) {
+    public void setName(String name) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Erro, o nome não pode ser vazio nem nulo.");
         }
-        this.nome = nome;
+        this.name = name;
     }
 
     public List<Asset> getPortfolio() {

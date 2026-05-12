@@ -3,44 +3,44 @@ import java.math.RoundingMode;
 
 public class RealEstateFund extends Asset {
     // Attributes
-    private int quantidadeCotas;
-    private BigDecimal dividendoPorCota;
+    private int quantityQuotas;
+    private BigDecimal dividendByQoutas;
 
     // Constructor
 
-    public RealEstateFund(String nome, BigDecimal valorInicial, int quantidadeCotas, BigDecimal dividendoPorCota) {
-        super(nome, valorInicial);
-        setQuantidadeCotas(quantidadeCotas);
-        setDividendoPorCota(dividendoPorCota);
+    public RealEstateFund(String name, BigDecimal initialValue, int quantityQuotas, BigDecimal dividendByQoutas) {
+        super(name, initialValue);
+        setQuantityQuotas(quantityQuotas);
+        setDividendByQoutas(dividendByQoutas);
     }
 
     // Public Methods
     @Override
-    public BigDecimal calcularValorAtual() {
-        BigDecimal valorAtual;
-        valorAtual = getValorInicial().add(BigDecimal.valueOf(getQuantidadeCotas()).multiply(getDividendoPorCota()));
-        return valorAtual.setScale(2, RoundingMode.HALF_UP);
+    public BigDecimal calculateCurrentValue() {
+        BigDecimal actualValue;
+        actualValue = getInitialValue().add(BigDecimal.valueOf(getQuantityQuotas()).multiply(getDividendByQoutas()));
+        return actualValue.setScale(2, RoundingMode.HALF_UP);
     }
 
     // Getters and Setters
-    public int getQuantidadeCotas() {
-        return quantidadeCotas;
+    public int getQuantityQuotas() {
+        return quantityQuotas;
     }
 
-    private void setQuantidadeCotas(int quantidadeCotas) {
-        if (quantidadeCotas < 0) {
+    private void setQuantityQuotas(int quantityQuotas) {
+        if (quantityQuotas < 0) {
             throw new IllegalArgumentException("Erro! A quantidade de cotas não pode ser menor que 0.");
         }
 
-        this.quantidadeCotas = quantidadeCotas;
+        this.quantityQuotas = quantityQuotas;
     }
 
-    public BigDecimal getDividendoPorCota() {
-        return dividendoPorCota;
+    public BigDecimal getDividendByQoutas() {
+        return dividendByQoutas;
     }
 
-    private void setDividendoPorCota(BigDecimal dividendoPorCota) {
-        validarBigDecimal(dividendoPorCota, BigDecimal.ZERO, "Erro! O dividendo por cota não pode ser menor que 0.");
-        this.dividendoPorCota = dividendoPorCota;
+    private void setDividendByQoutas(BigDecimal dividendByQoutas) {
+        validateBigDecimal(dividendByQoutas, BigDecimal.ZERO, "Erro! O dividendo por cota não pode ser menor que 0.");
+        this.dividendByQoutas = dividendByQoutas;
     }
 }

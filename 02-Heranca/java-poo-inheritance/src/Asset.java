@@ -2,51 +2,51 @@ import java.math.BigDecimal;
 
 public abstract class Asset implements Reportable {
     // Attributes
-    private String nome;
-    private BigDecimal valorInicial;
+    private String name;
+    private BigDecimal initialValue;
 
     // Constructor
-    public Asset(String nome, BigDecimal valorInicial) {
-        setNome(nome);
-        setValorInicial(valorInicial);
+    public Asset(String name, BigDecimal initialValue) {
+        setName(name);
+        setInitialValue(initialValue);
     }
 
     // Public Methods
-    public abstract BigDecimal calcularValorAtual();
+    public abstract BigDecimal calculateCurrentValue();
 
     @Override
-    public final void exibirRelatorio() {
-        System.out.println("Ativo: " + getNome() + "\n Valor Atual: " + calcularValorAtual());
+    public final void showReport() {
+        System.out.println("Ativo: " + getName() + "\n Valor Atual: " + calculateCurrentValue());
     }
 
     // Intern Methods
-    protected final void validarBigDecimal(BigDecimal valor, BigDecimal limite, String mensagemErro) {
-        if (valor == null) {
+    protected final void validateBigDecimal(BigDecimal value, BigDecimal limit, String errorMessage) {
+        if (value == null) {
             throw new NullPointerException("ERRO INTERNO! valor não pode ser nulo!");
         }
-        if (valor.compareTo(limite) < 0) {
-            throw new IllegalArgumentException(mensagemErro);
+        if (value.compareTo(limit) < 0) {
+            throw new IllegalArgumentException(errorMessage);
         }
     }
 
     // Getters and Setters
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    private void setNome(String nome) {
-        if (nome == null || nome.isBlank()) {
+    private void setName(String name) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Erro! O nome não pode ser nulo nem vazio.");
         }
-        this.nome = nome;
+        this.name = name;
     }
 
-    public BigDecimal getValorInicial() {
-        return valorInicial;
+    public BigDecimal getInitialValue() {
+        return initialValue;
     }
 
-    private void setValorInicial(BigDecimal valorInicial) {
-        validarBigDecimal(valorInicial, BigDecimal.ZERO, "Erro! O valor inicial não pode ser menor que 0.");
-        this.valorInicial = valorInicial;
+    private void setInitialValue(BigDecimal initialValue) {
+        validateBigDecimal(initialValue, BigDecimal.ZERO, "Erro! O valor inicial não pode ser menor que 0.");
+        this.initialValue = initialValue;
     }
 }
