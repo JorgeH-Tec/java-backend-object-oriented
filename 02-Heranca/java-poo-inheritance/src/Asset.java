@@ -35,7 +35,7 @@ public abstract class Asset implements Reportable {
     }
 
     private void setNome(String nome) {
-        if (nome.isBlank()) {
+        if (nome == null || nome.isBlank()) {
             throw new IllegalArgumentException("Erro! O nome não pode ser nulo nem vazio.");
         }
         this.nome = nome;
