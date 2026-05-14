@@ -1,6 +1,6 @@
 # Java Backend: OOP Evolution Journey 🚀
 
-> **Status:** ✅ Milestone de Herança Concluído
+> **Status:** ✅ Etapa de Herança/Polimorfismo Concluída
 
 Este repositório documenta minha progressão técnica na **Orientação a Objetos (POO)**. O objetivo é transformar conceitos teóricos em sistemas funcionais, modulares e resilientes, preparando a base para projetos futuros em **Spring Boot**.
 
@@ -18,7 +18,7 @@ Foco no relacionamento entre classes e na proteção do estado dos objetos.
 
 Introdução de contratos para padronizar comportamentos entre objetos distintos.
 
-### 3. NexuSaldo: Financial Asset Manager (Herança & Polimorfismo) 💰
+### 3. Financial Asset Manager (Herança & Polimorfismo) 💰
 
 O marco mais complexo até aqui, simulando um sistema real de gestão de ativos financeiros.
 
@@ -43,17 +43,17 @@ O marco mais complexo até aqui, simulando um sistema real de gestão de ativos 
 ```bash
 ├── .gitignore                      # Filtro de arquivos binários e configurações de IDE
 ├── README.md                       # Documentação da jornada técnica
-└── 01-Encapsulamento/
+└── 01-Foundations/
     └── java-poo-relationships-and-association/src/
     └── java-poo-interface-and-aggregation/src/
-└── 02-Heranca/
-    └── java-poo-inheritance/src/   # NexuSaldo: Asset, Stock, Investor, etc.
+└── 02-Advanced-OOP/
+    └── java-poo-inheritance/src/   # Ativos financeiros: Asset, Stock, Investor, etc.
 
 ```
 
 ---
 
-## 🔜 Próximo Milestone: Collections & Stream API 🌊
+## 🔜 Próximo Passo: Collections & Stream API 🌊
 
 O próximo passo para tornar este projeto "nível sênior" é abandonar loops manuais e abraçar o poder funcional do Java.
 
