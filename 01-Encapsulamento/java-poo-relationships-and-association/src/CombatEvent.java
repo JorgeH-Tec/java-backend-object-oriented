@@ -18,8 +18,8 @@ public class CombatEvent {
         Fight luta1 = new Fight();
 
         try {
-            luta1.marcarLuta(l[4], l[5]);
-            luta1.lutar();
+            luta1.scheduleFight(l[4], l[5]);
+            luta1.toFight();
 
             l[4].status();
             l[5].status();

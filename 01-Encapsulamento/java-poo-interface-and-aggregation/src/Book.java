@@ -1,137 +1,137 @@
 public class Book implements Publication {
     // Attributes
-    private String titulo;
-    private String autor;
-    private int totPaginas;
-    private int pagAtual;
-    private boolean aberto;
-    private Person leitor;
+    private String title;
+    private String author;
+    private int totalPages;
+    private int currentPage;
+    private boolean open;
+    private Person reader;
 
     // Constructor Method
-    public Book(String titulo, String autor, int totPaginas, Person leitor) {
-        setTitulo(titulo);
-        setAutor(autor);
-        setTotPaginas(totPaginas);
-        setLeitor(leitor);
+    public Book(String title, String author, int totalPages, Person reader) {
+        setTitle(title);
+        setAuthor(author);
+        setTotalPages(totalPages);
+        setReader(reader);
     }
 
     // Public Methods
-    public void detalhes() {
+    public void details() {
         System.out.println("---------- Informações do livro ----------");
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Autor: " + getAutor());
-        System.out.println("Total de páginas: " + getTotPaginas());
-        System.out.println("Leitor: " + getLeitor().getNome());
-        System.out.println("Página Atual: " + getPagAtual());
+        System.out.println("Título: " + getTitle());
+        System.out.println("Autor: " + getAuthor());
+        System.out.println("Total de páginas: " + getTotalPages());
+        System.out.println("Leitor: " + getReader().getName());
+        System.out.println("Página Atual: " + getCurrentPage());
     }
 
     @Override
-    public void abrir() {
-        if (isAberto()) {
+    public void toOpen() {
+        if (isOpen()) {
             throw new IllegalArgumentException("O livro já está aberto!");
         }
-        setAberto(true);
+        setOpen(true);
     }
 
     @Override
-    public void fechar() {
-        if (!(isAberto())) {
+    public void toClose() {
+        if (!(isOpen())) {
             throw new IllegalArgumentException("O livro ja está fechado!");
         }
-        setAberto(false);
+        setOpen(false);
     }
 
     @Override
-    public void folhear(int pagina) {
-        testeAberto(aberto);
-        setPagAtual(pagina);
+    public void browse(int page) {
+        openTest(open);
+        setCurrentPage(page);
     }
 
     @Override
-    public void avancarPag() {
-        testeAberto(aberto);
-        setPagAtual(getPagAtual() + 1);
+    public void advancePage() {
+        openTest(open);
+        setCurrentPage(getCurrentPage() + 1);
     }
 
     @Override
-    public void voltarPag() {
-        testeAberto(aberto);
-        setPagAtual(getPagAtual() - 1);
+    public void backPage() {
+        openTest(open);
+        setCurrentPage(getCurrentPage() - 1);
     }
 
     // Intern Methods
-    private void validarTexto(String valor, String campo) {
+    private void validateText(String valor, String campo) {
         if (valor == null || valor.isBlank()) {
             throw new IllegalArgumentException("Erro! O campo " + campo + " não pode ser nulo ou vazio.");
         }
     }
 
-    private void testeAberto(boolean aberto) {
-        if (!(isAberto())) {
+    private void openTest(boolean open) {
+        if (!(isOpen())) {
             throw new IllegalArgumentException("Erro! O livro está fechado, abra-o primeiro.");
         }
     }
 
     // Getters and Setters
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    private void setTitulo(String titulo) {
-        validarTexto(titulo, "título");
-        this.titulo = titulo;
+    private void setTitle(String title) {
+        validateText(title, "título");
+        this.title = title;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getAuthor() {
+        return author;
     }
 
-    private void setAutor(String autor) {
-        validarTexto(autor, "autor");
-        this.autor = autor;
+    private void setAuthor(String author) {
+        validateText(author, "autor");
+        this.author = author;
     }
 
-    public int getTotPaginas() {
-        return totPaginas;
+    public int getTotalPages() {
+        return totalPages;
     }
 
-    private void setTotPaginas(int totPaginas) {
-        if (totPaginas < 0) {
+    private void setTotalPages(int totalPages) {
+        if (totalPages < 0) {
             throw new IllegalArgumentException("Erro! O total de páginas não pode ser negativo.");
         }
-        this.totPaginas = totPaginas;
+        this.totalPages = totalPages;
     }
 
-    public int getPagAtual() {
-        return pagAtual;
+    public int getCurrentPage() {
+        return currentPage;
     }
 
-    private void setPagAtual(int pagAtual) {
-        if (pagAtual < 0) {
+    private void setCurrentPage(int currentPage) {
+        if (currentPage < 0) {
             throw new IllegalArgumentException("Você já está na primeira página, não é possivel voltar mais.");
         }
-        if (pagAtual > getTotPaginas()) {
+        if (currentPage > getTotalPages()) {
             throw new IllegalArgumentException("Você já está na última página, não é possivel avançar mais.");
         }
-        this.pagAtual = pagAtual;
+        this.currentPage = currentPage;
     }
 
-    public boolean isAberto() {
-        return aberto;
+    public boolean isOpen() {
+        return open;
     }
 
-    private void setAberto(boolean aberto) {
-        this.aberto = aberto;
+    private void setOpen(boolean open) {
+        this.open = open;
     }
 
-    public Person getLeitor() {
-        return leitor;
+    public Person getReader() {
+        return reader;
     }
 
-    private void setLeitor(Person leitor) {
-        if (leitor == null) {
+    private void setReader(Person reader) {
+        if (reader == null) {
             throw new IllegalArgumentException("Erro! O leitor não pode ser nulo.");
         }
-        this.leitor = leitor;
+        this.reader = reader;
     }
 }

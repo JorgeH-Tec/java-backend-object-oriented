@@ -11,10 +11,10 @@ public class Simulation {
             l[1] = new Book("JAVA POO", "Guanabara", 500, p[1]);
             l[2] = new Book("Java Avançado", "Guanabara", 800, p[1]);
 
-            l[0].abrir();
-            l[0].folhear(147);
-            l[0].avancarPag();
-            l[0].detalhes();
+            l[0].toOpen();
+            l[0].browse(147);
+            l[0].advancePage();
+            l[0].details();
 
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());

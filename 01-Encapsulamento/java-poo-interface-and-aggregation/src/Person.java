@@ -1,63 +1,63 @@
 public class Person {
     // Attributes
-    private String nome;
-    private int idade;
-    private String sexo;
+    private String name;
+    private int age;
+    private String gender;
 
     // Constructor
-    public Person(String nome, int idade, String sexo) {
-        setNome(nome);
-        setIdade(idade);
-        setSexo(sexo);
+    public Person(String name, int age, String gender) {
+        setName(name);
+        setAge(age);
+        setGender(gender);
     }
 
     // Public Methods
-    public void fazerAniver() {
-        setIdade(getIdade() + 1);
+    public void haveBirthday() {
+        setAge(getAge() + 1);
         System.out.println("Feliz Aniversario!");
-        System.out.println("Agora você tem " + getIdade() + " anos");
+        System.out.println("Agora você tem " + getAge() + " anos");
     }
 
     // Intern Methods
-    private void validarTexto(String valor, String campo) {
-        if (valor == null || valor.isBlank()) {
-            throw new IllegalArgumentException("Erro! O campo " + campo + " não pode ser nulo ou vazio.");
+    private void validateText(String value, String field) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException("Erro! O campo " + field + " não pode ser nulo ou vazio.");
         }
     }
 
     // Getters and Setters
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    private void setNome(String nome) {
-        validarTexto(nome, "nome");
-        this.nome = nome;
+    private void setName(String name) {
+        validateText(name, "nome");
+        this.name = name;
     }
 
-    public int getIdade() {
-        return idade;
+    public int getAge() {
+        return age;
     }
 
-    private void setIdade(int idade) {
-        if (idade < 0) {
+    private void setAge(int age) {
+        if (age < 0) {
             throw new IllegalArgumentException("Erro! A idade não pode ser negativa.");
         }
-        if (idade > 120) {
+        if (age > 120) {
             throw new IllegalArgumentException("Erro! Limite biológico de idade excedido (máximo 120 anos).");
         }
-        this.idade = idade;
+        this.age = age;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getGender() {
+        return gender;
     }
 
-    private void setSexo(String sexo) {
-        validarTexto(sexo, "sexo");
+    private void setGender(String gender) {
+        validateText(gender, "sexo");
 
-        if (sexo.equalsIgnoreCase("m") || sexo.equalsIgnoreCase("f")) {
-            this.sexo = sexo;
+        if (gender.equalsIgnoreCase("m") || gender.equalsIgnoreCase("f")) {
+            this.gender = gender;
         } else {
             throw new IllegalArgumentException("Sexo invalido! digite M(Masculino) ou F(Feminino).");
         }

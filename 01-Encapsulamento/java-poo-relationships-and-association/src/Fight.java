@@ -3,77 +3,77 @@ import java.util.Random;
 
 public class Fight {
     // Attributes
-    private Fighter desafiado; // tipo abstrato de dado, o tipo é uma instacia/agregação da Classe Lutador
-    private Fighter desafiante;
+    private Fighter challenged;
+    private Fighter challenging;
     private int rounds;
-    private boolean aprovada;
-    private final Random gerador = new Random();
+    private boolean approved;
+    private final Random generator = new Random();
 
     // Constructor
     public Fight() {
-        this.aprovada = false;
+        this.approved = false;
     }
 
     // Public Methods
-    public void marcarLuta(Fighter desafiado, Fighter desafiante) {
-        if (Objects.equals(desafiado.getNome(), desafiante.getNome())) {
+    public void scheduleFight(Fighter challenged, Fighter challenging) {
+        if (Objects.equals(challenged.getName(), challenging.getName())) {
             throw new IllegalArgumentException("Um Lutador não pode lutar contra ele mesmo!");
         }
 
-        if (!(Objects.equals(desafiado.getCategoria(), desafiante.getCategoria()))) {
+        if (!(Objects.equals(challenged.getCategory(), challenging.getCategory()))) {
             throw new IllegalArgumentException("Os lutadores não podem ser de categorias de peso diferentes!");
         }
 
-        setAprovada(true);
-        setDesafiado(desafiado);
-        setDesafiante(desafiante);
+        setApproved(true);
+        setChallenged(challenged);
+        setChallenging(challenging);
     }
 
-    public void lutar() {
-        if (!(isAprovada())) {
+    public void toFight() {
+        if (!(isApproved())) {
             throw new IllegalArgumentException("Está luta não foi aprovada!");
         }
-        System.out.println("\n----- " + desafiado.getNome() + " vs " + desafiante.getNome() + " -----\n");
-        desafiado.apresentar();
-        desafiante.apresentar();
+        System.out.println("\n----- " + challenged.getName() + " vs " + challenging.getName() + " -----\n");
+        challenged.toApresent();
+        challenging.toApresent();
 
-        int resultado = gerador.nextInt(3);
+        int result = generator.nextInt(3);
 
-        switch (resultado) {
+        switch (result) {
             case 0 -> {
                 System.out.println("\nEmpate!\n");
-                desafiado.empatarLuta();
-                desafiante.empatarLuta();
+                challenged.drawFight();
+                challenging.drawFight();
             }
             case 1 -> {
-                System.out.println("\n" + desafiado.getNome() + " é o Vencedor!\n");
-                desafiado.ganharLuta();
-                desafiante.perderLuta();
+                System.out.println("\n" + challenged.getName() + " é o Vencedor!\n");
+                challenged.winFight();
+                challenging.loseFight();
             }
             case 2 -> {
-                System.out.println("\n" + desafiante.getNome() + " é o Vencedor!\n");
-                desafiante.ganharLuta();
-                desafiado.perderLuta();
+                System.out.println("\n" + challenging.getName() + " é o Vencedor!\n");
+                challenging.winFight();
+                challenged.loseFight();
             }
             default -> System.out.println("Erro, resultado inesperado!");
         }
     }
 
     // Setters and Getters
-    public Fighter getDesafiado() {
-        return desafiado;
+    public Fighter getChallenged() {
+        return challenged;
     }
 
-    private void setDesafiado(Fighter desafiado) {
-        this.desafiado = desafiado;
+    private void setChallenged(Fighter challenged) {
+        this.challenged = challenged;
     }
 
-    public Fighter getDesafiante() {
-        return desafiante;
+    public Fighter getChallenging() {
+        return challenging;
     }
 
-    private void setDesafiante(Fighter desafiante) {
-        this.desafiante = desafiante;
+    private void setChallenging(Fighter challenging) {
+        this.challenging = challenging;
     }
 
     public int getRounds() {
@@ -84,11 +84,11 @@ public class Fight {
         this.rounds = rounds;
     }
 
-    public boolean isAprovada() {
-        return aprovada;
+    public boolean isApproved() {
+        return approved;
     }
 
-    private void setAprovada(boolean aprovada) {
-        this.aprovada = aprovada;
+    private void setApproved(boolean approved) {
+        this.approved = approved;
     }
 }

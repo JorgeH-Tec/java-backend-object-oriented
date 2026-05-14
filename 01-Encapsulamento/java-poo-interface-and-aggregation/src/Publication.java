@@ -1,11 +1,11 @@
 public interface Publication {
-    public abstract void abrir();
+    public abstract void toOpen();
 
-    public abstract void fechar();
+    public abstract void toClose();
 
-    public abstract void folhear(int pagina);
+    public abstract void browse(int page);
 
-    public abstract void avancarPag();
+    public abstract void advancePage();
 
-    public abstract void voltarPag();
+    public abstract void backPage();
 }

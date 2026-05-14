@@ -1,136 +1,136 @@
 public class Fighter {
     // Attributes
-    private String nome;
-    private String nacionalidade;
-    private int idade;
-    private double altura;
-    private double peso;
-    private int vitorias;
-    private int derrotas;
-    private int empates;
+    private String name;
+    private String nacionality;
+    private int age;
+    private double height;
+    private double weight;
+    private int wins;
+    private int loses;
+    private int draws;
 
     // Constructor
-    public Fighter(String nome, String nacionalidade, int idade, double altura, double peso, int vitorias, int derrotas, int empates) {
-        this.nome = nome;
-        this.nacionalidade = nacionalidade;
-        this.idade = idade;
-        this.altura = altura;
-        this.peso = peso;
-        this.vitorias = vitorias;
-        this.derrotas = derrotas;
-        this.empates = empates;
+    public Fighter(String name, String nacionality, int age, double height, double weight, int wins, int loses, int draws) {
+        this.name = name;
+        this.nacionality = nacionality;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.wins = wins;
+        this.loses = loses;
+        this.draws = draws;
     }
 
     // Public Methods
-    public void apresentar() {
+    public void toApresent() {
         System.out.println("---------- APRESENTAÇÂO ----------");
-        System.out.println("Lutador: " + getNome());
-        System.out.println("Nacionalidade: " + getNacionalidade());
-        System.out.println("Categoria: peso " + getCategoria());
-        System.out.println("Idade: " + getIdade() + " anos");
-        System.out.println("Altura: " + getAltura() + "m");
-        System.out.println("Peso: " + getPeso() + "Kg");
-        System.out.println("Vitorias: " + getVitorias());
-        System.out.println("Derrotas: " + getDerrotas());
-        System.out.println("Empates: " + getEmpates());
+        System.out.println("Lutador: " + getName());
+        System.out.println("Nacionalidade: " + getNacionality());
+        System.out.println("Categoria: peso " + getCategory());
+        System.out.println("Idade: " + getAge() + " anos");
+        System.out.println("Altura: " + getHeight() + "m");
+        System.out.println("Peso: " + getWeight() + "Kg");
+        System.out.println("Vitorias: " + getWins());
+        System.out.println("Derrotas: " + getLoses());
+        System.out.println("Empates: " + getDraws());
     }
 
     public void status() {
         System.out.println("---------- STATUS ----------");
-        System.out.println(getNome());
-        System.out.println("Categoria: peso " + getCategoria());
-        System.out.println("Vitorias: " + getVitorias());
-        System.out.println("Derrotas: " + getDerrotas());
-        System.out.println("Empates: " + getEmpates());
+        System.out.println(getName());
+        System.out.println("Categoria: peso " + getCategory());
+        System.out.println("Vitorias: " + getWins());
+        System.out.println("Derrotas: " + getLoses());
+        System.out.println("Empates: " + getDraws());
     }
 
-    public void ganharLuta() {
-        setVitorias(getVitorias() + 1);
+    public void winFight() {
+        setWins(getWins() + 1);
     }
 
-    public void perderLuta() {
-        setDerrotas(getDerrotas() + 1);
+    public void loseFight() {
+        setLoses(getLoses() + 1);
     }
 
-    public void empatarLuta() {
-        setEmpates(getEmpates() + 1);
+    public void drawFight() {
+        setDraws(getDraws() + 1);
     }
 
     // Getters and Setters
-    public String getNome() {
-        return this.nome;
+    public String getName() {
+        return this.name;
     }
 
-    private void setNome(String nome) {
-        this.nome = nome;
+    private void setName(String name) {
+        this.name = name;
     }
 
-    public String getNacionalidade() {
-        return nacionalidade;
+    public String getNacionality() {
+        return nacionality;
     }
 
-    private void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
+    private void setNacionality(String nacionality) {
+        this.nacionality = nacionality;
     }
 
-    public int getIdade() {
-        return idade;
+    public int getAge() {
+        return age;
     }
 
-    private void setIdade(int idade) {
-        this.idade = idade;
+    private void setAge(int age) {
+        this.age = age;
     }
 
-    public double getAltura() {
-        return altura;
+    public double getHeight() {
+        return height;
     }
 
-    private void setAltura(double altura) {
-        this.altura = altura;
+    private void setHeight(double height) {
+        this.height = height;
     }
 
-    public double getPeso() {
-        return peso;
+    public double getWeight() {
+        return weight;
     }
 
-    private void setPeso(double peso) {
-        this.peso = peso;
+    private void setWeight(double weight) {
+        this.weight = weight;
     }
 
-    public String getCategoria() {
-        if (this.peso < 52.2 || this.peso > 120.2) {
+    public String getCategory() {
+        if (this.weight < 52.2 || this.weight > 120.2) {
             return "Inválido";
         }
-        if (this.peso <= 70.3) {
+        if (this.weight <= 70.3) {
             return "Leve";
         }
-        if (this.peso <= 83.9) {
+        if (this.weight <= 83.9) {
             return "Médio";
         }
         return "Pesado";
     }
 
-    public int getVitorias() {
-        return vitorias;
+    public int getWins() {
+        return wins;
     }
 
-    private void setVitorias(int vitorias) {
-        this.vitorias = vitorias;
+    private void setWins(int wins) {
+        this.wins = wins;
     }
 
-    public int getDerrotas() {
-        return derrotas;
+    public int getLoses() {
+        return loses;
     }
 
-    private void setDerrotas(int derrotas) {
-        this.derrotas = derrotas;
+    private void setLoses(int loses) {
+        this.loses = loses;
     }
 
-    public int getEmpates() {
-        return empates;
+    public int getDraws() {
+        return draws;
     }
 
-    private void setEmpates(int empates) {
-        this.empates = empates;
+    private void setDraws(int draws) {
+        this.draws = draws;
     }
 }
