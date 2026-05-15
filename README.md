@@ -43,7 +43,7 @@ O marco mais complexo até aqui, simulando um sistema real de gestão de ativos 
 ```bash
 ├── .gitignore                      # Filtro de arquivos binários e configurações de IDE
 ├── README.md                       # Documentação da jornada técnica
-└── 01-Foundations/
+└── 01-Foundations-OOP/
     └── java-poo-relationships-and-association/src/
     └── java-poo-interface-and-aggregation/src/
 └── 02-Advanced-OOP/
