@@ -22,17 +22,18 @@ Introdução de contratos para padronizar comportamentos entre objetos distintos
 
 O marco mais complexo até aqui, simulando um sistema real de gestão de ativos financeiros.
 
-* **Conceitos Aplicados:**
-* **Herança & Abstração:** Classe mãe `Asset` fornecendo a base para `Stock`, `RealEstateFund` e `FixedIncome`.
-* **Polimorfismo:** Processamento dinâmico de uma `List<Asset>` onde cada objeto executa sua própria lógica de cálculo.
-* **Interfaces:** Contrato `Reportable` garantindo que todos os ativos sigam um padrão de exibição.
-* **Programação Defensiva:**
-* Uso de **`final`** em coleções para proteger referências.
-* **`BigDecimal`** para precisão financeira absoluta (evitando erros de `double`).
-* Validação rigorosa de nomes e valores com `IllegalArgumentException`.
+#### 🧩 Conceitos de POO Aplicados
 
+* **Herança & Abstração:** Classe mãe `Asset` fornecendo a base para as especializações `Stock`, `RealEstateFund` e `FixedIncome`.
+* **Polimorfismo:** Processamento dinâmico de uma `List<Asset>`, onde o sistema itera sobre a coleção e cada objeto executa sua própria lógica de cálculo em tempo de execução.
+* **Interfaces:** Implementação do contrato `Reportable`, garantindo que todos os ativos sigam estritamente um padrão unificado de exibição de dados.
 
-* **Resiliência:** Estrutura completa de **`try-catch-finally`** para tratamento amigável de erros e finalização de processos.
+#### 🛡️ Programação Defensiva & Resiliência
+
+* **Precisão Numérica:** Uso de `BigDecimal` para cálculos monetários, eliminando completamente as imprecisões de arredondamento do tipo `double`.
+* **Imutabilidade:** Aplicação do modificador `final` em coleções para proteger referências de memória contra modificações acidentais.
+* **Validação de Estado:** Filtro rigoroso de entradas (nomes e valores) disparando `IllegalArgumentException` para evitar dados corrompidos no sistema.
+* **Tratamento de Erros:** Estrutura robusta de `try-catch-finally`, garantindo uma experiência amigável para o usuário em caso de falhas e o fechamento seguro de sessões.
 
 
 
@@ -47,7 +48,7 @@ O marco mais complexo até aqui, simulando um sistema real de gestão de ativos 
     └── java-poo-relationships-and-association/src/
     └── java-poo-interface-and-aggregation/src/
 └── 02-Advanced-OOP/
-    └── java-poo-inheritance/src/   # Ativos financeiros: Asset, Stock, Investor, etc.
+    └── src/   # Ativos financeiros: Asset, Stock, Investor, etc.
 
 ```
 
@@ -55,7 +56,7 @@ O marco mais complexo até aqui, simulando um sistema real de gestão de ativos 
 
 ## 🔜 Próximo Passo: Collections & Stream API 🌊
 
-O próximo passo para tornar este projeto "nível sênior" é abandonar loops manuais e abraçar o poder funcional do Java.
+O próximo passo para elevar esse projeto para um nível superior é abandonar loops manuais e abraçar o poder funcional do Java.
 
 * **Java Streams:** Filtrar e somar ativos de forma declarativa.
 * **Lambda Expressions:** Reduzir a verbosidade do código.
